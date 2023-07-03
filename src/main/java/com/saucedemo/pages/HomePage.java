@@ -12,24 +12,22 @@ public class HomePage extends BasePage{
     private By logoutBtn = By.xpath("//a[contains(@id,'logout')]");
     private By verifyHome = By.xpath("//div[@class='inventory_container']");
     private By verifyAdd = By.xpath("//button[@id='remove-sauce-labs-backpack']");
-    private By name = By.cssSelector(".inventory_list > div:nth-of-type(1) .inventory_item_name");
-    private By price = By.cssSelector(".inventory_list > div:nth-of-type(1) .inventory_item_price");
 
     /**
-     * Select Drop-down option
-     * @param nameProd Displayed product name
+     * Select Drop-down
+     * @param filterBy Select filter option
      */
-    public HomePage selectFilter(String nameProd){
+    public HomePage selectFilter(String filterBy){
         Select filterProduct = new Select(driver.findElement(filter));
-        filterProduct.selectByVisibleText(nameProd);
+        filterProduct.selectByVisibleText(filterBy);
         return this;
     }
-    public String verifyFilterName(){
-        return getText(name);
+    public String verifyFilterName(String option){
+        return getText(By.cssSelector(".inventory_list > div:nth-of-type("+option+") .inventory_item_name"));
     }
 
-    public String verifyFilterPrice(){
-        return getText(price);
+    public String verifyFilterPrice(String option){
+        return getText(By.cssSelector(".inventory_list > div:nth-of-type("+option+") .inventory_item_price"));
     }
 
     public boolean verifyHomePage(){

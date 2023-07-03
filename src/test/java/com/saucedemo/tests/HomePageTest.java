@@ -38,7 +38,7 @@ public class HomePageTest extends BaseTest{
     public void filterProduct(){
         loginPage.login("standard_user", "secret_sauce");
         homePage.selectFilter("Price (low to high)");
-        assertEquals(homePage.verifyFilterName(), "Sauce Labs Onesie");
-        assertEquals(homePage.verifyFilterPrice(), "$7.99");
+        assertEquals(homePage.verifyFilterName("1"), "Sauce Labs Onesie");
+        assertEquals(homePage.verifyFilterPrice("1"), "$7.99");
     }
 }
