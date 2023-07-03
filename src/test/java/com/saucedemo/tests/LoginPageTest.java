@@ -5,7 +5,7 @@ import static org.testng.Assert.*;
 
 public class LoginPageTest extends BaseTest{
 
-    @Test(description = "Verify LoginPage")
+    @Test(description = "Verifying LoginPage")
     public void verifyLoginPage() {
         boolean verify = loginPage.verifyLogin();
         assertTrue(verify);
