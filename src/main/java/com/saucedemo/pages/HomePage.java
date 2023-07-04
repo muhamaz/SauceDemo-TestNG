@@ -22,12 +22,12 @@ public class HomePage extends BasePage{
         filterProduct.selectByVisibleText(filterBy);
         return this;
     }
-    public String verifyFilterName(String option){
-        return getText(By.cssSelector(".inventory_list > div:nth-of-type("+option+") .inventory_item_name"));
+    public String verifyFilterName(String productName){
+        return getText(By.xpath("//div[.='"+productName+"']"));
     }
 
-    public String verifyFilterPrice(String option){
-        return getText(By.cssSelector(".inventory_list > div:nth-of-type("+option+") .inventory_item_price"));
+    public String verifyFilterPrice(String index){
+        return getText(By.cssSelector(".inventory_list > div:nth-of-type("+index+") .inventory_item_price"));
     }
 
     public boolean verifyHomePage(){

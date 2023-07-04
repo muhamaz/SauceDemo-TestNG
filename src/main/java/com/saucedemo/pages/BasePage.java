@@ -23,7 +23,7 @@ public class BasePage {
         //Exception handling
         try{
             properties = new Properties();
-            fis = new FileInputStream("D:\\Java\\TDD-SauceDemo-TestNG\\src\\main\\java\\com\\saucedemo\\config\\config.properties");
+            fis = new FileInputStream("D:\\Java\\SauceDemo-TestNG\\src\\main\\java\\com\\saucedemo\\config\\config.properties");
             properties.load(fis);
 
             browser = properties.getProperty("browser");
@@ -73,13 +73,6 @@ public class BasePage {
         tab(locator);
     }
 
-    public void tab(By locator){
-        driver.findElement(locator).sendKeys(Keys.TAB);
-    }
-    public void clickBtn(By locator){
-        driver.findElement(locator).click();
-    }
-
     public String getText(By locator){
         String getText = driver.findElement(locator).getText();
         if (getText.isEmpty()){
@@ -87,6 +80,13 @@ public class BasePage {
         }else{
             return getText;
         }
+    }
+
+    public void tab(By locator){
+        driver.findElement(locator).sendKeys(Keys.TAB);
+    }
+    public void clickBtn(By locator){
+        driver.findElement(locator).click();
     }
 
 

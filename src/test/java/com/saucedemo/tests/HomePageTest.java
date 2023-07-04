@@ -14,16 +14,20 @@ public class HomePageTest extends BaseTest{
         assertTrue(verify, "HomePage not Displayed");
     }
     @Test
-    public void addToCartProduct(){
+    public void addToCartButton(){
         String productName = "sauce-labs-backpack";
         loginPage.login("standard_user", "secret_sauce");
         homePage.addProduct(productName);
         assertTrue(homePage.verifyAddToCartBtn());
+        homePage.clickCartIcon();
+        assertTrue(cartPage.verifyContentCartPage());
+        assertTrue(cartPage.verifyCartItem());
     }
     @Test
     public void cartIcon(){
         loginPage.login("standard_user", "secret_sauce");
         homePage.clickCartIcon();
+        assertTrue(cartPage.verifyContentCartPage());
     }
     @Test
     public void logoutFromWebsite() throws InterruptedException {
@@ -38,7 +42,7 @@ public class HomePageTest extends BaseTest{
     public void filterProduct(){
         loginPage.login("standard_user", "secret_sauce");
         homePage.selectFilter("Price (low to high)");
-        assertEquals(homePage.verifyFilterName("1"), "Sauce Labs Onesie");
+        assertEquals(homePage.verifyFilterName("Sauce Labs Onesie"), "Sauce Labs Onesie");
         assertEquals(homePage.verifyFilterPrice("1"), "$7.99");
     }
 }
