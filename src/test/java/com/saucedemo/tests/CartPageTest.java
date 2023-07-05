@@ -27,5 +27,7 @@ public class CartPageTest extends BaseTest{
         homePage.clickCartIcon();
         assertTrue(cartPage.verifyCheckoutBtn());
         cartPage.clickCheckoutBtn();
+        assertTrue(checkoutPage.verifyCheckoutPage());
+        assertEquals(checkoutPage.getTitlePage(), "Checkout: Your Information");
     }
 }
