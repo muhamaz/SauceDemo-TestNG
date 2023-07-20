@@ -33,19 +33,4 @@ public class CartPage extends BasePage{
         clickBtn(checkoutBtn);
     }
 
-    /**
-     * Getting product name on cart page
-     * @param productName is name of product
-     */
-    public String getProductName(String productName){
-        return getText(By.xpath("//div[.='"+productName+"']"));
-    }
-
-    /**
-     * Getting product price on cart page
-     * @param index start at 3
-     */
-    public String getProductPrice(String index){
-        return getText(By.xpath("div:nth-of-type("+index+") .inventory_item_price"));
-    }
 }

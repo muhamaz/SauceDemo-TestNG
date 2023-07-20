@@ -11,6 +11,8 @@ public class BaseTest extends BasePage {
     protected HomePage homePage;
     protected CartPage cartPage;
     protected CheckoutPage checkoutPage;
+    protected CheckoutSummaryPage checkoutSummaryPage;
+    protected CheckoutCompletePage checkoutCompletePage;
     @BeforeMethod
     public void setup(){
         assertTrue(goToHomePage(), "An error occurred while navigate to the HomePage");
@@ -18,6 +20,8 @@ public class BaseTest extends BasePage {
          homePage = new HomePage();
          cartPage = new CartPage();
          checkoutPage = new CheckoutPage();
+         checkoutSummaryPage = new CheckoutSummaryPage();
+         checkoutCompletePage = new CheckoutCompletePage();
     }
 
     @AfterMethod
